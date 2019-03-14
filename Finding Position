@@ -1,0 +1,25 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+void lastManStanding(int n){
+    while(n){
+        if((n&(n-1)) == 0){
+            cout<<n<<endl;
+            return;
+        }
+        n--;
+    }
+
+    return;
+}
+int main() {
+	//code
+	int t, n;
+	cin>>t;
+	while(t){
+	    cin>>n;
+	    lastManStanding(n);
+	    t--;
+	}
+	return 0;
+}
