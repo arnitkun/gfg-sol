@@ -1,0 +1,21 @@
+void showPath(Node* node, string path){
+    if(node->left==NULL && node->right == NULL){
+        cout<<path + to_string(node->data) + " #"; 
+    }else{
+        showPath(node->left, path + to_string(node->data) + " " );
+        showPath(node->right, path + to_string(node->data) + " " );
+    }
+    
+    
+}
+void printPaths(Node* root)
+{  
+    
+    if(!root){
+        return;
+    }
+    
+    showPath(root,"");
+    cout<<endl;
+    
+}
