@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	//code
+	int T, nhouse, money, start;
+	//vector< int> v;
+	cin>>T;
+	while(T--){
+	    cin>>nhouse;
+	    cin>>money;
+	    
+	    if(nhouse%2==0){
+	        cout<<((nhouse/2)*money);
+	    }else{
+	        cout<<((nhouse+1)/2)*money;
+	    }
+	    
+	    cout<<endl;
+	}
+	return 0;
+}
