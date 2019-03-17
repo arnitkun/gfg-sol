@@ -4,12 +4,20 @@ void minDex(string str, string pat){
     unordered_map<char, int> hash;
     int i, temp_index, min_index = INT_MAX;
     for(i = 0; i < str.size(); i++){
-        temp_index = i;
+        
         if(hash.find(str[i]) != hash.end()){
             hash[str[i]] = min(hash[str[i]], i);
         }else{
             hash[str[i]] = i;
         }
+    }
+    
+    for( i =0; i < pat.size(); i++){
+        if(hash[pat[i]]){
+            temp_index = hash[pat[i]];
+        }
+        
+        mix_index = min(temp_index, min_index);
     }
 }
 
