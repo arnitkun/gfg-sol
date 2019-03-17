@@ -1,0 +1,33 @@
+#include <bits/stdc++.h>
+using namespace std;
+void sun(vector<int> v){
+    int i;
+    int cur_max = 0,max_yet = 0, count = 0;
+    
+    for(i = 0; i < v.size();i++){
+        if(v[i] >= cur_max){
+            cur_max = v[i];
+            //cout<<"cur_max :"<<cur_max;
+            count++;
+        }
+        
+        
+    }
+    
+    cout<<count<<endl;
+}
+
+int main() {
+	//code
+	int T, i, size;
+	cin>>T;
+	while(T--){
+	    cin>>size;
+	    vector<int > vec(size);
+	    for(i =0; i < size;i++){
+	        cin>>vec[i];
+	    }
+	    sun(vec);
+	}
+	return 0;
+}
