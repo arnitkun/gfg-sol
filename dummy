@@ -1,3 +1,4 @@
+
 #include <bits/stdc++.h>
 using namespace std;
 void minDex(string str, string pat){
@@ -10,15 +11,20 @@ void minDex(string str, string pat){
         }else{
             hash[str[i]] = i;
         }
-    }
+    } // create hashmap of string with indices
     
-    for( i =0; i < pat.size(); i++){
-        if(hash[pat[i]]){
-            temp_index = hash[pat[i]];
+    //for (const auto &p : hash) {
+    //std::cout << "hash[" << p.first << "] = " << p.second << '\n';
+    //}
+    
+    for(i = 0; i < pat.size(); i++){
+        if(hash.find(pat[i])!= hash.end()){   //if pat[i] is in hashmap
+            temp_index= hash[pat[i]];
+            //cout<<pat[i]<<temp_index;
+            min_index = min(temp_index, min_index);
         }
-        
-        mix_index = min(temp_index, min_index);
-    }
+    }    
+    cout<<str[min_index]<<endl;
 }
 
 int main() {
