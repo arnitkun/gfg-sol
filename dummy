@@ -1,0 +1,39 @@
+#include <iostream>
+#include <string>
+#include <vector>
+
+void reverse(string s){
+    char *arr= new char [s.length()+1];
+    strcpy(arr, s.c_str());
+    vector<string> result;
+    int i;   
+    char *tok = strtok(arr, ".");
+    
+    while (tok != NULL){ 
+        //printf("%s ", tok); 
+        result.push_back(tok);
+        tok = strtok(NULL, ".");
+    } 
+    
+    for(i=result.size()-1;i>=0;i--){
+        cout<<result[i];
+        if(i!=0){
+            cout<<".";
+        }
+    }
+}
+using namespace std;
+
+int main() {
+    int T;
+    string str;
+    cin>>T;
+    while(T--){
+        cin>>str;
+        reverse(str);
+        cout<<endl;
+        
+    }
+    //std::cout << "Hello World!\n";
+    return 0;
+}
