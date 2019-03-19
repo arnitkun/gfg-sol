@@ -1,0 +1,22 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	//code
+	int T,size;
+	cin>>T;
+	string str;
+	while(T--){
+	    vector<string> vec;
+	    
+	    cin>>str;
+      cout<<str;
+	    sort(str.begin(), str.end()); 
+	    while(next_permutation(str.begin(), str.end())){
+	        cout<<str<<" ";
+	    }
+	    cout<<endl;
+	    
+	}
+	return 0;
+}
