@@ -1,0 +1,32 @@
+#include <iostream>
+#include<vector>
+#include<climits>
+using namespace std;
+
+void larget(vector<int> &v){
+    int cmax = v[0], i, gmax = v[0];
+    // for(i = 0 ; i < v.size(); i++){
+    //     cout<<v[i]<<" ";
+    // }
+    // cout<<endl;
+    for(i = 1 ; i < v.size(); i++){
+        cmax = max(v[i], v[i]+cmax);
+        gmax = max(cmax, gmax);
+    }
+    cout<<gmax;
+}
+int main() {
+	//code
+	int T, x, i, size;
+	cin>>T;
+	while(T--){
+	    cin>>size;
+	    vector<int> vec(size);
+	    for(i = 0; i < size; i++){
+	        cin>>vec[i];
+	    }
+	    larget(vec);
+	    cout<<endl;
+	}
+	return 0;
+}
