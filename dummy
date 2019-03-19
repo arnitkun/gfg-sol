@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
-
+using namespace std;
 void reverse(string s){
     char *arr= new char [s.length()+1];
     strcpy(arr, s.c_str());
