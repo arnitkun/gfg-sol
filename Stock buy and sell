@@ -1,0 +1,49 @@
+#include <iostream>
+#include<vector>
+using namespace std;
+
+void stock(vector<int> v){
+    int i = 0, count =0;
+    int n = v.size();
+    while(i<n-1){
+    while(i < n-1 && (v[i]>=v[i+1])){
+        i++;
+    }
+    if(i == n-1){
+        break;
+    }
+    
+    cout<<"("<<i<<" ";
+    i = i+1;
+    
+    while(i < n && (v[i]>=v[i-1])){
+        i++;
+        }
+    cout<<i-1<<") ";
+    
+    count++;
+    }
+    
+    if(count == 0){
+        cout<<"No Profit";
+    }
+    
+}
+
+int main() {
+    int i,size;
+    int T;
+    cin>>T;
+    while(T--){
+        cin>>size;
+        vector<int> vec(size);
+        for(i =0 ; i < size; i++){
+            cin>>vec[i];
+        }
+        
+        stock(vec);
+        cout<<endl;
+    }
+	//code
+	return 0;
+}
