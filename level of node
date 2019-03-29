@@ -1,0 +1,23 @@
+/*
+Structure of the node of the binary tree is
+struct Node
+{
+	int data;
+	struct Node *left;
+	struct Node *right;
+};
+*/
+// function should return level of the target node
+int findlevel(struct Node *node, int target, int level){
+    
+    if(!node) return 0;
+    if(node->data == target) return level;
+    return (findlevel(node->left, target, level+1) | findlevel(node->right, target, level+1));
+
+}
+int getLevel(struct Node *node, int target)
+{
+	//code here
+	return findlevel(node, target, 1);
+    
+}
