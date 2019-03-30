@@ -1,7 +1,7 @@
 void levelOrder(Node* node)
 {
   //Your code here
-  if(!root) return;
+  if(!node) return;
   queue<Node*> q;
   q.push(node);
   Node* temp;
